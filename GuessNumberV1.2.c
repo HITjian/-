@@ -5,22 +5,22 @@
 main(){
   FILE *fp;
   char a;
-  int k=0,t=0,n,number,answer,maxnumber,mychoose1,mychoose2,standard;/*½«µ±Ç°Ê±¼äÉèÖÃ³ÉËæ»úº¯ÊıµÄÖÖ×Ó£¬ËùÒÔÃ¿´Î²úÉúµÄÊı¶¼²»Ò»Ñù*/
+  int k=0,t=0,n,number,answer,maxnumber,mychoose1,mychoose2,standard;/*å°†å½“å‰æ—¶é—´è®¾ç½®æˆéšæœºå‡½æ•°çš„ç§å­ï¼Œæ‰€ä»¥æ¯æ¬¡äº§ç”Ÿçš„æ•°éƒ½ä¸ä¸€æ ·*/
   if ((fp=fopen("README2.txt","r+"))==NULL){
      printf("Cannot open file!\n");exit(0);}
   while((a=fgetc(fp))!=EOF)
      putchar(a);
 
-    aa: printf("\n             ²Ëµ¥  \n1.¿ªÊ¼   2.ÍË³ö  \n");
+    aa: printf("\n             èœå•  \n1.å¼€å§‹   2.é€€å‡º  \n");
      scanf("%d",&mychoose1);
      switch(mychoose1){
- case 1:  printf("    ÇëÑ¡ÔñÄÑÒ×³Ì¶È\n1.¼òµ¥  2.ÆÕÍ¨   3.À§ÄÑ   4.×Ô¶¨Òå\n");
+ case 1:  printf("    è¯·é€‰æ‹©éš¾æ˜“ç¨‹åº¦\n1.ç®€å•  2.æ™®é€š   3.å›°éš¾   4.è‡ªå®šä¹‰\n");
      scanf("%d",&standard);
  switch(standard){
  	case 1:n=pow(10,2);break;
  	case 2:n=pow(10,3);break;
  	case 3:n=pow(10,4);break;
- 	case 4:printf("¸ø³öµÄÊı×î´ó¿ÉÒÔÊÇ¶àÉÙ£¿\n0~%d");
+ 	case 4:printf("ç»™å‡ºçš„æ•°æœ€å¤§å¯ä»¥æ˜¯å¤šå°‘ï¼Ÿ\n0~%d");
  	       scanf("%d ",&maxnumber);
 			while(maxnumber>0){
 				maxnumber/=10;
@@ -29,21 +29,21 @@ main(){
  }   
      srand( (unsigned)time( NULL ) );
      number=rand()%n;
-  printf("²Â²Â¿´ÊÇÄÄ¸öÊı×Ö\n");
+  printf("çŒœçŒœçœ‹æ˜¯å“ªä¸ªæ•°å­—\n");
    do{
         scanf("%d",&answer);
         fprintf(fp,"%d\n",answer);
        if(answer>number){ 
-            printf("²Â´óÁË,ÔÙÀ´Ò»´Î\n");
-            fprintf(fp,"²Â´óÁË,ÔÙÀ´Ò»´Î\n");} 
+            printf("çŒœå¤§äº†,å†æ¥ä¸€æ¬¡\n");
+            fprintf(fp,"çŒœå¤§äº†,å†æ¥ä¸€æ¬¡\n");} 
         if(answer<number){ 
-            printf("²ÂĞ¡ÁË£¬ÔÙÀ´Ò»´Î\n");
-            fprintf(fp,"²ÂĞ¡ÁË,ÔÙÀ´Ò»´Î\n");} 
+            printf("çŒœå°äº†ï¼Œå†æ¥ä¸€æ¬¡\n");
+            fprintf(fp,"çŒœå°äº†,å†æ¥ä¸€æ¬¡\n");} 
             k++;
     }while(answer!=number);
-    printf("Õâ´ÎÄãÖ»ÓÃÁË%d´Î¾Í²Â³öÁË´ğ°¸£¬ÄãÔËÆøÕæºÃ!\n",k);
-    fprintf(fp,"Õâ´ÎÄãÖ»ÓÃÁË%d´Î¾Í²Â³öÁË´ğ°¸£¬ÄãÔËÆøÕæºÃ!\n",k);
-     printf("1.ÔÙÀ´Ò»´Î  2.ÍË³ö");
+    printf("è¿™æ¬¡ä½ åªç”¨äº†%dæ¬¡å°±çŒœå‡ºäº†ç­”æ¡ˆï¼Œä½ è¿æ°”çœŸå¥½!\n",k);
+    fprintf(fp,"è¿™æ¬¡ä½ åªç”¨äº†%dæ¬¡å°±çŒœå‡ºäº†ç­”æ¡ˆï¼Œä½ è¿æ°”çœŸå¥½!\n",k);
+     printf("1.å†æ¥ä¸€æ¬¡  2.é€€å‡º");
      scanf("%d",&mychoose2);
      switch(mychoose2){
   	case 1:goto aa;break;
