@@ -5,7 +5,7 @@
 main(){
   FILE *fp;
   char a;
-  int i,number,answer,k=0;/*½«µ±Ç°Ê±¼äÉèÖÃ³ÉËæ»úº¯ÊıµÄÖÖ×Ó£¬ËùÒÔÃ¿´Î²úÉúµÄÊı¶¼²»Ò»Ñù*/
+  int i,number,answer,k=0;/*å°†å½“å‰æ—¶é—´è®¾ç½®æˆéšæœºå‡½æ•°çš„ç§å­ï¼Œæ‰€ä»¥æ¯æ¬¡äº§ç”Ÿçš„æ•°éƒ½ä¸ä¸€æ ·*/
 
   if ((fp=fopen("README0.txt","r"))==NULL){
      printf("Cannot open file!\n");exit(0);}
@@ -13,16 +13,16 @@ main(){
      putchar(a);
   srand( (unsigned)time( NULL ) );
      number=rand()%100;
-    printf("²Â²Â¿´ÊÇÄÄ¸öÊı×Ö\n");
+    printf("çŒœçŒœçœ‹æ˜¯å“ªä¸ªæ•°å­—\n");
     do{
         scanf("%d",&answer);
         if(answer>number)
-            printf("²Â´óÁË,ÔÙÀ´Ò»´Î\n");
+            printf("çŒœå¤§äº†,å†æ¥ä¸€æ¬¡\n");
         if(answer<number)
-            printf("²ÂĞ¡ÁË£¬ÔÙÀ´Ò»´Î\n");
+            printf("çŒœå°äº†ï¼Œå†æ¥ä¸€æ¬¡\n");
             k++;
     }while(answer!=number);
-    printf("Õâ´ÎÄãÖ»ÓÃÁË%d´Î¾Í²Â³öÁË´ğ°¸£¬ÄãÔËÆøÕæºÃ!\n",k);
+    printf("è¿™æ¬¡ä½ åªç”¨äº†%dæ¬¡å°±çŒœå‡ºäº†ç­”æ¡ˆï¼Œä½ è¿æ°”çœŸå¥½!\n",k);
 
 fclose(fp);
 }
